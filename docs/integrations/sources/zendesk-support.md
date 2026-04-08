@@ -220,6 +220,7 @@ The `tickets` stream uses Zendesk's [Export Search Results](https://developer.ze
 
 | Version     | Date       | Pull Request                                             | Subject                                                                                                                                                                                                                            |
 |:------------|:-----------|:---------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 5.2.4 | 2026-04-08 | [*PR_NUMBER_PLACEHOLDER*](https://github.com/airbytehq/airbyte/pull/*PR_NUMBER_PLACEHOLDER*) | Fix links_next_paginator crash when Zendesk API response lacks cursor pagination keys |
 | 5.2.3 | 2026-04-06 | [](https://github.com/airbytehq/airbyte/pull/) | Add `token_expiry_date` to `complete_oauth_output_specification` so it is hidden from the UI as an OAuth-managed field |
 | 5.2.2 | 2026-03-23 | [74993](https://github.com/airbytehq/airbyte/pull/74993) | Switch ticket_metric_events to time-based pagination to prevent heartbeat timeout on large datasets |
 | 5.2.1 | 2026-03-17 | [74394](https://github.com/airbytehq/airbyte/pull/74394) | Migrate to scopes object array format |
