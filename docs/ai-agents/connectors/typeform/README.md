@@ -70,7 +70,7 @@ from airbyte_agent_typeform import TypeformConnector, AirbyteAuthConfig
 
 connector = TypeformConnector(
     auth_config=AirbyteAuthConfig(
-        customer_name="<your_customer_name>",
+        workspace_name="<your_workspace_name>",
         organization_id="<your_organization_id>",  # Optional for multi-org clients
         airbyte_client_id="<your-client-id>",
         airbyte_client_secret="<your-client-secret>"
@@ -91,12 +91,12 @@ This connector supports the following entities and actions. For more details, se
 
 | Entity | Actions |
 |--------|---------|
-| Forms | [List](./REFERENCE.md#forms-list), [Get](./REFERENCE.md#forms-get), [Search](./REFERENCE.md#forms-search) |
-| Responses | [List](./REFERENCE.md#responses-list), [Search](./REFERENCE.md#responses-search) |
-| Webhooks | [List](./REFERENCE.md#webhooks-list), [Search](./REFERENCE.md#webhooks-search) |
-| Workspaces | [List](./REFERENCE.md#workspaces-list), [Search](./REFERENCE.md#workspaces-search) |
-| Images | [List](./REFERENCE.md#images-list), [Search](./REFERENCE.md#images-search) |
-| Themes | [List](./REFERENCE.md#themes-list), [Search](./REFERENCE.md#themes-search) |
+| Forms | [List](./REFERENCE.md#forms-list), [Get](./REFERENCE.md#forms-get), [Context Store Search](./REFERENCE.md#forms-context-store-search) |
+| Responses | [List](./REFERENCE.md#responses-list), [Context Store Search](./REFERENCE.md#responses-context-store-search) |
+| Webhooks | [List](./REFERENCE.md#webhooks-list), [Context Store Search](./REFERENCE.md#webhooks-context-store-search) |
+| Workspaces | [List](./REFERENCE.md#workspaces-list), [Context Store Search](./REFERENCE.md#workspaces-context-store-search) |
+| Images | [List](./REFERENCE.md#images-list), [Context Store Search](./REFERENCE.md#images-context-store-search) |
+| Themes | [List](./REFERENCE.md#themes-list), [Context Store Search](./REFERENCE.md#themes-context-store-search) |
 
 
 ### Authentication
@@ -109,7 +109,7 @@ See the official [Typeform API reference](https://developer.typeform.com/).
 
 ## Version information
 
-- **Package version:** 0.1.8
-- **Connector version:** 1.0.2
-- **Generated with Connector SDK commit SHA:** 75f388847745be753ab20224c66697e1d4a84347
+- **Package version:** 1.0.4
+- **Connector version:** 1.0.4
+- **Generated with Connector SDK commit SHA:** unknown
 - **Changelog:** [View changelog](https://github.com/airbytehq/airbyte-agent-connectors/blob/main/connectors/typeform/CHANGELOG.md)

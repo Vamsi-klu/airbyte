@@ -69,7 +69,7 @@ from airbyte_agent_amplitude import AmplitudeConnector, AirbyteAuthConfig
 
 connector = AmplitudeConnector(
     auth_config=AirbyteAuthConfig(
-        customer_name="<your_customer_name>",
+        workspace_name="<your_workspace_name>",
         organization_id="<your_organization_id>",  # Optional for multi-org clients
         airbyte_client_id="<your-client-id>",
         airbyte_client_secret="<your-client-secret>"
@@ -90,11 +90,11 @@ This connector supports the following entities and actions. For more details, se
 
 | Entity | Actions |
 |--------|---------|
-| Annotations | [List](./REFERENCE.md#annotations-list), [Get](./REFERENCE.md#annotations-get), [Search](./REFERENCE.md#annotations-search) |
-| Cohorts | [List](./REFERENCE.md#cohorts-list), [Get](./REFERENCE.md#cohorts-get), [Search](./REFERENCE.md#cohorts-search) |
-| Events List | [List](./REFERENCE.md#events-list-list), [Search](./REFERENCE.md#events-list-search) |
-| Active Users | [List](./REFERENCE.md#active-users-list), [Search](./REFERENCE.md#active-users-search) |
-| Average Session Length | [List](./REFERENCE.md#average-session-length-list), [Search](./REFERENCE.md#average-session-length-search) |
+| Annotations | [List](./REFERENCE.md#annotations-list), [Get](./REFERENCE.md#annotations-get), [Context Store Search](./REFERENCE.md#annotations-context-store-search) |
+| Cohorts | [List](./REFERENCE.md#cohorts-list), [Get](./REFERENCE.md#cohorts-get), [Context Store Search](./REFERENCE.md#cohorts-context-store-search) |
+| Events List | [List](./REFERENCE.md#events-list-list), [Context Store Search](./REFERENCE.md#events-list-context-store-search) |
+| Active Users | [List](./REFERENCE.md#active-users-list), [Context Store Search](./REFERENCE.md#active-users-context-store-search) |
+| Average Session Length | [List](./REFERENCE.md#average-session-length-list), [Context Store Search](./REFERENCE.md#average-session-length-context-store-search) |
 
 
 ### Authentication
@@ -107,7 +107,7 @@ See the official [Amplitude API reference](https://www.docs.developers.amplitude
 
 ## Version information
 
-- **Package version:** 0.1.11
-- **Connector version:** 1.0.2
-- **Generated with Connector SDK commit SHA:** 75f388847745be753ab20224c66697e1d4a84347
+- **Package version:** 1.0.3
+- **Connector version:** 1.0.3
+- **Generated with Connector SDK commit SHA:** unknown
 - **Changelog:** [View changelog](https://github.com/airbytehq/airbyte-agent-connectors/blob/main/connectors/amplitude/CHANGELOG.md)

@@ -74,7 +74,7 @@ from airbyte_agent_amazon_seller_partner import AmazonSellerPartnerConnector, Ai
 
 connector = AmazonSellerPartnerConnector(
     auth_config=AirbyteAuthConfig(
-        customer_name="<your_customer_name>",
+        workspace_name="<your_workspace_name>",
         organization_id="<your_organization_id>",  # Optional for multi-org clients
         airbyte_client_id="<your-client-id>",
         airbyte_client_secret="<your-client-secret>"
@@ -95,10 +95,10 @@ This connector supports the following entities and actions. For more details, se
 
 | Entity | Actions |
 |--------|---------|
-| Orders | [List](./REFERENCE.md#orders-list), [Get](./REFERENCE.md#orders-get), [Search](./REFERENCE.md#orders-search) |
-| Order Items | [List](./REFERENCE.md#order-items-list), [Search](./REFERENCE.md#order-items-search) |
-| List Financial Event Groups | [List](./REFERENCE.md#list-financial-event-groups-list), [Search](./REFERENCE.md#list-financial-event-groups-search) |
-| List Financial Events | [List](./REFERENCE.md#list-financial-events-list), [Search](./REFERENCE.md#list-financial-events-search) |
+| Orders | [List](./REFERENCE.md#orders-list), [Get](./REFERENCE.md#orders-get), [Context Store Search](./REFERENCE.md#orders-context-store-search) |
+| Order Items | [List](./REFERENCE.md#order-items-list), [Context Store Search](./REFERENCE.md#order-items-context-store-search) |
+| List Financial Event Groups | [List](./REFERENCE.md#list-financial-event-groups-list), [Context Store Search](./REFERENCE.md#list-financial-event-groups-context-store-search) |
+| List Financial Events | [List](./REFERENCE.md#list-financial-events-list), [Context Store Search](./REFERENCE.md#list-financial-events-context-store-search) |
 | Catalog Items | [List](./REFERENCE.md#catalog-items-list), [Get](./REFERENCE.md#catalog-items-get) |
 | Reports | [List](./REFERENCE.md#reports-list), [Get](./REFERENCE.md#reports-get) |
 
@@ -113,7 +113,7 @@ See the official [Amazon-Seller-Partner API reference](https://developer-docs.am
 
 ## Version information
 
-- **Package version:** 0.1.9
-- **Connector version:** 1.0.3
-- **Generated with Connector SDK commit SHA:** 75f388847745be753ab20224c66697e1d4a84347
+- **Package version:** 1.0.5
+- **Connector version:** 1.0.5
+- **Generated with Connector SDK commit SHA:** unknown
 - **Changelog:** [View changelog](https://github.com/airbytehq/airbyte-agent-connectors/blob/main/connectors/amazon-seller-partner/CHANGELOG.md)

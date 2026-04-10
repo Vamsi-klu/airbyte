@@ -79,7 +79,7 @@ from airbyte_agent_chargebee import ChargebeeConnector, AirbyteAuthConfig
 
 connector = ChargebeeConnector(
     auth_config=AirbyteAuthConfig(
-        customer_name="<your_customer_name>",
+        workspace_name="<your_workspace_name>",
         organization_id="<your_organization_id>",  # Optional for multi-org clients
         airbyte_client_id="<your-client-id>",
         airbyte_client_secret="<your-client-secret>"
@@ -100,17 +100,17 @@ This connector supports the following entities and actions. For more details, se
 
 | Entity | Actions |
 |--------|---------|
-| Customer | [List](./REFERENCE.md#customer-list), [Get](./REFERENCE.md#customer-get), [Search](./REFERENCE.md#customer-search) |
-| Subscription | [List](./REFERENCE.md#subscription-list), [Get](./REFERENCE.md#subscription-get), [Search](./REFERENCE.md#subscription-search) |
-| Invoice | [List](./REFERENCE.md#invoice-list), [Get](./REFERENCE.md#invoice-get), [Search](./REFERENCE.md#invoice-search) |
-| Credit Note | [List](./REFERENCE.md#credit-note-list), [Get](./REFERENCE.md#credit-note-get), [Search](./REFERENCE.md#credit-note-search) |
-| Coupon | [List](./REFERENCE.md#coupon-list), [Get](./REFERENCE.md#coupon-get), [Search](./REFERENCE.md#coupon-search) |
-| Transaction | [List](./REFERENCE.md#transaction-list), [Get](./REFERENCE.md#transaction-get), [Search](./REFERENCE.md#transaction-search) |
-| Event | [List](./REFERENCE.md#event-list), [Get](./REFERENCE.md#event-get), [Search](./REFERENCE.md#event-search) |
-| Order | [List](./REFERENCE.md#order-list), [Get](./REFERENCE.md#order-get), [Search](./REFERENCE.md#order-search) |
-| Item | [List](./REFERENCE.md#item-list), [Get](./REFERENCE.md#item-get), [Search](./REFERENCE.md#item-search) |
-| Item Price | [List](./REFERENCE.md#item-price-list), [Get](./REFERENCE.md#item-price-get), [Search](./REFERENCE.md#item-price-search) |
-| Payment Source | [List](./REFERENCE.md#payment-source-list), [Get](./REFERENCE.md#payment-source-get), [Search](./REFERENCE.md#payment-source-search) |
+| Customer | [List](./REFERENCE.md#customer-list), [Get](./REFERENCE.md#customer-get), [Context Store Search](./REFERENCE.md#customer-context-store-search) |
+| Subscription | [List](./REFERENCE.md#subscription-list), [Get](./REFERENCE.md#subscription-get), [Context Store Search](./REFERENCE.md#subscription-context-store-search) |
+| Invoice | [List](./REFERENCE.md#invoice-list), [Get](./REFERENCE.md#invoice-get), [Context Store Search](./REFERENCE.md#invoice-context-store-search) |
+| Credit Note | [List](./REFERENCE.md#credit-note-list), [Get](./REFERENCE.md#credit-note-get), [Context Store Search](./REFERENCE.md#credit-note-context-store-search) |
+| Coupon | [List](./REFERENCE.md#coupon-list), [Get](./REFERENCE.md#coupon-get), [Context Store Search](./REFERENCE.md#coupon-context-store-search) |
+| Transaction | [List](./REFERENCE.md#transaction-list), [Get](./REFERENCE.md#transaction-get), [Context Store Search](./REFERENCE.md#transaction-context-store-search) |
+| Event | [List](./REFERENCE.md#event-list), [Get](./REFERENCE.md#event-get), [Context Store Search](./REFERENCE.md#event-context-store-search) |
+| Order | [List](./REFERENCE.md#order-list), [Get](./REFERENCE.md#order-get), [Context Store Search](./REFERENCE.md#order-context-store-search) |
+| Item | [List](./REFERENCE.md#item-list), [Get](./REFERENCE.md#item-get), [Context Store Search](./REFERENCE.md#item-context-store-search) |
+| Item Price | [List](./REFERENCE.md#item-price-list), [Get](./REFERENCE.md#item-price-get), [Context Store Search](./REFERENCE.md#item-price-context-store-search) |
+| Payment Source | [List](./REFERENCE.md#payment-source-list), [Get](./REFERENCE.md#payment-source-get), [Context Store Search](./REFERENCE.md#payment-source-context-store-search) |
 
 
 ### Authentication
@@ -123,7 +123,7 @@ See the official [Chargebee API reference](https://apidocs.chargebee.com/docs/ap
 
 ## Version information
 
-- **Package version:** 0.1.8
-- **Connector version:** 1.0.1
-- **Generated with Connector SDK commit SHA:** 75f388847745be753ab20224c66697e1d4a84347
+- **Package version:** 1.0.2
+- **Connector version:** 1.0.2
+- **Generated with Connector SDK commit SHA:** unknown
 - **Changelog:** [View changelog](https://github.com/airbytehq/airbyte-agent-connectors/blob/main/connectors/chargebee/CHANGELOG.md)

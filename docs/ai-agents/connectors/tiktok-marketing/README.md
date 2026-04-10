@@ -76,7 +76,7 @@ from airbyte_agent_tiktok_marketing import TiktokMarketingConnector, AirbyteAuth
 
 connector = TiktokMarketingConnector(
     auth_config=AirbyteAuthConfig(
-        customer_name="<your_customer_name>",
+        workspace_name="<your_workspace_name>",
         organization_id="<your_organization_id>",  # Optional for multi-org clients
         airbyte_client_id="<your-client-id>",
         airbyte_client_secret="<your-client-secret>"
@@ -97,17 +97,17 @@ This connector supports the following entities and actions. For more details, se
 
 | Entity | Actions |
 |--------|---------|
-| Advertisers | [List](./REFERENCE.md#advertisers-list), [Search](./REFERENCE.md#advertisers-search) |
-| Campaigns | [List](./REFERENCE.md#campaigns-list), [Search](./REFERENCE.md#campaigns-search) |
-| Ad Groups | [List](./REFERENCE.md#ad-groups-list), [Search](./REFERENCE.md#ad-groups-search) |
-| Ads | [List](./REFERENCE.md#ads-list), [Search](./REFERENCE.md#ads-search) |
-| Audiences | [List](./REFERENCE.md#audiences-list), [Search](./REFERENCE.md#audiences-search) |
-| Creative Assets Images | [List](./REFERENCE.md#creative-assets-images-list), [Search](./REFERENCE.md#creative-assets-images-search) |
-| Creative Assets Videos | [List](./REFERENCE.md#creative-assets-videos-list), [Search](./REFERENCE.md#creative-assets-videos-search) |
-| Advertisers Reports Daily | [List](./REFERENCE.md#advertisers-reports-daily-list), [Search](./REFERENCE.md#advertisers-reports-daily-search) |
-| Campaigns Reports Daily | [List](./REFERENCE.md#campaigns-reports-daily-list), [Search](./REFERENCE.md#campaigns-reports-daily-search) |
-| Ad Groups Reports Daily | [List](./REFERENCE.md#ad-groups-reports-daily-list), [Search](./REFERENCE.md#ad-groups-reports-daily-search) |
-| Ads Reports Daily | [List](./REFERENCE.md#ads-reports-daily-list), [Search](./REFERENCE.md#ads-reports-daily-search) |
+| Advertisers | [List](./REFERENCE.md#advertisers-list), [Context Store Search](./REFERENCE.md#advertisers-context-store-search) |
+| Campaigns | [List](./REFERENCE.md#campaigns-list), [Context Store Search](./REFERENCE.md#campaigns-context-store-search) |
+| Ad Groups | [List](./REFERENCE.md#ad-groups-list), [Context Store Search](./REFERENCE.md#ad-groups-context-store-search) |
+| Ads | [List](./REFERENCE.md#ads-list), [Context Store Search](./REFERENCE.md#ads-context-store-search) |
+| Audiences | [List](./REFERENCE.md#audiences-list), [Context Store Search](./REFERENCE.md#audiences-context-store-search) |
+| Creative Assets Images | [List](./REFERENCE.md#creative-assets-images-list), [Context Store Search](./REFERENCE.md#creative-assets-images-context-store-search) |
+| Creative Assets Videos | [List](./REFERENCE.md#creative-assets-videos-list), [Context Store Search](./REFERENCE.md#creative-assets-videos-context-store-search) |
+| Advertisers Reports Daily | [List](./REFERENCE.md#advertisers-reports-daily-list), [Context Store Search](./REFERENCE.md#advertisers-reports-daily-context-store-search) |
+| Campaigns Reports Daily | [List](./REFERENCE.md#campaigns-reports-daily-list), [Context Store Search](./REFERENCE.md#campaigns-reports-daily-context-store-search) |
+| Ad Groups Reports Daily | [List](./REFERENCE.md#ad-groups-reports-daily-list), [Context Store Search](./REFERENCE.md#ad-groups-reports-daily-context-store-search) |
+| Ads Reports Daily | [List](./REFERENCE.md#ads-reports-daily-list), [Context Store Search](./REFERENCE.md#ads-reports-daily-context-store-search) |
 
 
 ### Authentication
@@ -120,7 +120,7 @@ See the official [Tiktok-Marketing API reference](https://business-api.tiktok.co
 
 ## Version information
 
-- **Package version:** 0.1.23
-- **Connector version:** 1.1.4
-- **Generated with Connector SDK commit SHA:** 75f388847745be753ab20224c66697e1d4a84347
+- **Package version:** 1.1.5
+- **Connector version:** 1.1.5
+- **Generated with Connector SDK commit SHA:** unknown
 - **Changelog:** [View changelog](https://github.com/airbytehq/airbyte-agent-connectors/blob/main/connectors/tiktok-marketing/CHANGELOG.md)
