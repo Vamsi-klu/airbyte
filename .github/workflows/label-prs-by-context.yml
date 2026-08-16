@@ -9,6 +9,8 @@ jobs:
   shared-pr-labeller:
     name: "Add Labels to PRs.  Safe to Merge on fail"
     runs-on: ubuntu-24.04
+    # Private workflow-actions repo + PAT exist on airbytehq/airbyte only.
+    if: ${{ secrets.GH_PAT_MAINTENANCE_OCTAVIA != '' }}
     steps:
       # TODO: Replace PAT with a GitHub App token.
       # The "private-action-loader" action does not seem to be compatible with it,
