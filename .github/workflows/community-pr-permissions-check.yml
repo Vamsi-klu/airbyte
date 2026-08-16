@@ -17,8 +17,9 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-24.04
-    # Only run for PRs from forks (not internal PRs)
-    if: github.event.pull_request.head.repo.fork == true
+    # Only run for cross-repo PRs. `head.repo.fork` is also true for same-repo
+    # PRs on a fork (the repo itself is a fork), which is not a maintainer-edit case.
+    if: github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     steps:
       - name: Checkout Repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
