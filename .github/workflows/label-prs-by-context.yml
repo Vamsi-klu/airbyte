@@ -9,14 +9,25 @@ jobs:
   shared-pr-labeller:
     name: "Add Labels to PRs.  Safe to Merge on fail"
     runs-on: ubuntu-24.04
-    # Private workflow-actions repo + PAT exist on airbytehq/airbyte only.
-    if: ${{ secrets.GH_PAT_MAINTENANCE_OCTAVIA != '' }}
     steps:
+      # Private workflow-actions repo + PAT exist on airbytehq/airbyte only.
+      - name: Check maintenance PAT
+        id: guard
+        env:
+          PAT: ${{ secrets.GH_PAT_MAINTENANCE_OCTAVIA }}
+        run: |
+          if [ -n "$PAT" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "Maintenance PAT is not configured; skipping auto-label."
+          fi
       # TODO: Replace PAT with a GitHub App token.
       # The "private-action-loader" action does not seem to be compatible with it,
       # so we should consider moving off of this specialized action onto a normal
       # action step.
       - name: Run Issue Command from workflow-actions
+        if: steps.guard.outputs.configured == 'true'
         uses: nick-fields/private-action-loader@6fa713597d3de3707f8b7a3029a5c262f32c5bca # v3.0.12
         with:
           pal-repo-token: "${{ secrets.GH_PAT_MAINTENANCE_OCTAVIA }}"
