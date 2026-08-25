@@ -47,11 +47,29 @@ is a good credential-free connector to validate the environment — its config i
 - **Java/Kotlin** connectors use Gradle via the root wrapper `./gradlew` (Gradle 8.14, Java 21 is
   installed). Use `poe gradle <task>` from the connector dir. First run warms the Gradle cache and
   is slow.
-- **Manifest-only** connectors keep unit tests in `unit_tests/` with their own `pyproject.toml`;
-  `poe test-unit-tests` installs and runs them.
+- **Manifest-only** connectors: `poe test-unit-tests` only runs the suite when
+  `unit_tests/pyproject.toml` exists (`poe-tasks/manifest-only-connector-tasks.toml`).
+  Most manifest-only connectors have that file. A few have real tests but no project
+  file (`source-wordpress`, `source-apple-search-ads`, `source-python-http-tutorial`).
+  For those, `poe test-unit-tests` prints `No unit tests defined` and exits 0.
+  Run the leftover suite from the connector directory instead:
+  `uvx --with pytest --with pyyaml pytest unit_tests`.
+  Add `unit_tests/pyproject.toml` if you want `poe` to pick the suite up later.
 
 ### Docker
 
-Docker is **not** installed and is **not** needed for local dev (install/lint/test/run). It is
-only required to build connector images (`airbyte-cdk image build`) or run container-based
-acceptance tests.
+Docker is **not** installed in this Cloud environment. Install, lint, unit tests, and
+`poetry run <connector> spec|check|discover|read` work without it for most connectors.
+
+That does **not** cover every local test suite. `poe test-integration-tests` for Poetry
+connectors runs `integration_tests/`, and some of those suites talk to Docker from an
+autouse fixture. `source-azure-blob-storage` starts Azurite via `docker.from_env()` in
+`integration_tests/conftest.py`; those runs fail at fixture setup here. Same pattern
+shows up on `source-gcs`, `source-sftp-bulk`, and several Java/Kotlin integration tests.
+
+Use a Docker-free connector such as `source-hardcoded-records` to validate the
+environment. Skip `poe test-integration-tests` unless you have confirmed the
+connector's fixtures do not start containers.
+
+Docker is also required to build connector images (`airbyte-cdk image build`) or run
+container-based acceptance tests.
