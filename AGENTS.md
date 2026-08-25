@@ -50,7 +50,7 @@ is a good credential-free connector to validate the environment — its config i
 - **Manifest-only** connectors: `poe test-unit-tests` only runs the suite when
   `unit_tests/pyproject.toml` exists (`poe-tasks/manifest-only-connector-tasks.toml`).
   Most manifest-only connectors have that file. A few have real tests but no project
-  file (`source-wordpress`, `source-apple-search-ads`, `source-python-http-tutorial`).
+  file, including `source-wordpress` and `source-python-http-tutorial`.
   For those, `poe test-unit-tests` prints `No unit tests defined` and exits 0.
   Run the leftover suite from the connector directory instead:
   `uvx --with pytest --with pyyaml pytest unit_tests`.
